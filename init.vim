@@ -1,3 +1,6 @@
+" Minimal Vim Configuration
+" No Plugin needed
+
 set number
 set mouse = a
 set relativenumber
