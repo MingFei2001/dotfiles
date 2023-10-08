@@ -1,6 +1,7 @@
 # Config File
 
-Here is where i store all my configuration file for various applications i use:
+This is a collection of my config file
 ---
 1. General Vim Configuration
-2. Starship Prompt Configuration \[Tokyo Night Modified]
+2. Starship Prompt Configuration
+   - \[Tokyo Night Modified]
