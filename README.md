@@ -9,3 +9,4 @@ This is a collection of my config file
   - grab from gnome-looks.org
 4. Tela Circle Icon Themes
   - grab from gnome-looks.org
+5. Qutebrowser config file
