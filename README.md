@@ -10,3 +10,4 @@ This is a collection of my config file
 4. Tela Circle Icon Themes
   - grab from gnome-looks.org
 5. Qutebrowser config file
+6. Neofetch configuration
