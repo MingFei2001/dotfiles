@@ -4,8 +4,9 @@ alias up='sudo apt-fast update && sudo apt-fast upgrade -y'
 alias autorm='sudo apt autoremove'
 alias autocl='sudo apt autoclean'
 
-# alias for cd
+# alias for terminal navigation
 alias ..='cd ..'
+alias mkdir='mkdir -pv'
 
 # alias for git auto detect changes and commit plus push
 alias submit='git add . && git commit -a && git push'
