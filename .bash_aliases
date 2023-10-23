@@ -25,6 +25,7 @@ alias br='broot -dp'
 alias lo='libreoffice'
 alias clock='tty-clock -c -B'
 alias rng='ranger'
+alias cm='cmatrix'
 
 # alias for neofetch
 alias nf='neofetch'
