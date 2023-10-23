@@ -12,9 +12,6 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
 
-# alias for some fun
-alias clea='echo try again bruh ... '
-
 # alias for git auto detect changes and commit plus push
 alias submit='git add . && git commit -a && git push'
 
