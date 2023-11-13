@@ -56,7 +56,7 @@ alias nf='neofetch'
 #----------------------------------------------------------
 # alias for system information call
 # i don't even know how to use awk yet
-alias batt="cat /sys/class/power_supply/BAT0/capacity | awk '{ print \"   Battery: \" \$1 \"%\" }'"
+alias batt="cat /sys/class/power_supply/BAT0/capacity | awk '{ print \"  Battery: \" \$1 \"%\" }'"
 alias clock='tty-clock -c -B'
 #----------------------------------------------------------
 
