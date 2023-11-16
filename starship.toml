@@ -36,7 +36,3 @@ format = "[[$symbol $percentage ](fg:#a0a9cb bg:#1d2230)]($style)"
 [[battery.display]]
 threshold = 100
 style = 'white bg:#1d2230'
-
-[[battery.display]]
-threshold = 100
-style = 'red bg:#1d2230'
