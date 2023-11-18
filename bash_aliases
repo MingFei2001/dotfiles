@@ -18,6 +18,7 @@
 # alias for apt operations
 alias in='sudo apt-fast install'
 alias up='sudo apt-fast update && sudo apt-fast upgrade -y'
+alias fup='sudo apt-fast update && sudo apt-fast full-upgrade -y'
 alias autorm='sudo apt autoremove'
 alias autocl='sudo apt autoclean'
 alias aptrm='sudo apt remove'
