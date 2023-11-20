@@ -59,7 +59,7 @@ alias nf='neofetch'
 # i don't even know how to use awk yet
 alias batt="cat /sys/class/power_supply/BAT0/capacity | awk '{ print \"  Battery: \" \$1 \"%\" }'"
 alias clock='tty-clock -c -B'
-alias bt="hcitool scan | grep soundcore | awk '{ print \$1 }' | xargs bluetoothctl connect"
+alias btsc="hcitool scan | grep soundcore | awk '{ print \$1 }' | xargs bluetoothctl connect"
 #----------------------------------------------------------
 
 #----------------------------------------------------------
