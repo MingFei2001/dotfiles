@@ -1,0 +1,10 @@
+set nu 
+set rnu
+set mouse=a
+set cursorline
+
+"enable tab bar on top
+set showtabline=2
+
+"set colorscheme to slate
+colorscheme slate
