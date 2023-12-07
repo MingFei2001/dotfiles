@@ -20,7 +20,7 @@ alias in='sudo apt-fast install'
 alias up='sudo apt-fast update && sudo apt-fast upgrade -y'
 alias fup='sudo apt-fast update && sudo apt-fast full-upgrade -y'
 alias autorm='sudo apt autoremove'
-alias autocl='sudo apt autoclean'
+alias autocl='sudo apt autoclean && sudo apt clean'
 alias aptrm='sudo apt remove'
 #----------------------------------------------------------
 # the old-fashioned apt style
