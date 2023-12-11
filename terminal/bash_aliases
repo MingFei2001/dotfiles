@@ -52,6 +52,7 @@ alias rng='ranger'
 alias cm='cmatrix'
 alias moc='mocp -T black-theme'
 alias nf='neofetch'
+alias scrwb='scrcpy --window-borderless'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
