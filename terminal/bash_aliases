@@ -61,6 +61,8 @@ alias scrwb='scrcpy --window-borderless'
 alias batt="cat /sys/class/power_supply/BAT0/capacity | awk '{ print \"  Battery: \" \$1 \"%\" }'"
 alias clock='tty-clock -c -B'
 alias btsc="hcitool scan | grep soundcore | awk '{ print \$1 }' | xargs bluetoothctl connect"
+alias off='poweroff'
+alias cl='clear'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
