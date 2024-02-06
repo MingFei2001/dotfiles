@@ -1,0 +1,97 @@
+#----------------------------------------------------------
+# 🌲 Everforest Starship Custom Theme 🌲
+# ⚙️  Made by Mingfei ⚙️
+# Github: https://github.com/MingFei2001
+#----------------------------------------------------------
+# Main structure
+format = """
+$os\
+$username\
+$hostname\
+$git_branch\
+$git_status\
+$cmd_duration\
+[|+++>](bold #A6B0A0)\
+$fill\
+[<+++|](bold #A6B0A0)\
+$time\
+$line_break\
+$directory\
+$character
+"""
+#----------------------------------------------------------
+# OS Info
+[os]
+disabled = false
+style = 'bold #A6B0A0'
+format = '[$symbol ]($style)'
+# OS Logo variants
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = " "
+SUSE = ""
+Mint = "󰣭"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Android = ""
+Arch = "󰣇"
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+#----------------------------------------------------------
+# User info
+# Username
+[username]
+show_always = true
+style_user = "#7FBBB3 bold"
+style_root = "red bold"
+format = '[$user]($style)'
+# hostname
+[hostname]
+ssh_only = false
+format = '[[  ](bold #83C092)[$hostname](bold #A7C080) ]($style)'
+#----------------------------------------------------------
+# Git info
+# Current git branch
+[git_branch]
+symbol = ""
+format = '[  \[ $symbol $branch \] ](#A6B0A0 bold)'
+# Current git status
+[git_status]
+format = '[( \[ $all_status$ahead_behind \]) ](#708089 bold)'
+#----------------------------------------------------------
+# Command duration / timer
+[cmd_duration]
+min_time = 75
+format = '[$duration](#9DA9A0)'
+#----------------------------------------------------------
+# Bar extender
+[fill]
+symbol = ' '
+#----------------------------------------------------------
+# Time display
+[time]
+disabled = false
+time_format = "%R"
+style = "bold white"
+format = '[  $time](bold #A6B0A0)'
+#----------------------------------------------------------
+# Line break / next line
+[line_break]
+disabled = false
+#----------------------------------------------------------
+# Current directory / pwd
+[directory]
+style = "#83C092 bold"
+format = "[$path ]($style)"
+truncation_length = 5
+truncation_symbol = "…/"
+#----------------------------------------------------------
+# Chevron / command indicator
+[character]
+disabled = false
+success_symbol = '[>](white)'
+error_symbol = '[>](red)'
