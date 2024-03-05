@@ -1,0 +1,55 @@
+# Ratpoison RC file
+# made by mingfei
+ 
+# Change the trigger to super key
+escape Super_L
+ 
+# Key unbinding
+unbind R
+ 
+# Ratpoison settings
+set border 5
+set bargravity c
+set bgcolor black
+set fgcolor white
+startupmessage off
+ 
+# Autostart
+exec alacritty
+ 
+# Ratpoison keybindings
+bind s-r restart
+bind colon exec
+ 
+# Apps keybinding
+bind s-Return exec alacritty
+bind Return exec alacritty
+bind s-w exec chromium
+bind s-f exec pcmanfm
+ 
+# Changing frame focus
+bind s-Up focusup
+bind Up focusup
+bind s-Down focusdown
+bind Down focusdown
+bind s-Left focusleft
+bind Left focusleft
+bind s-Right focusright
+bind Right focusright
+ 
+# Frame Spliting Keybindings
+bind s-minus split
+bind minus split
+bind s-backslash hsplit
+bind backslash hsplit
+bind s-o only
+ 
+# window selecting keybindings
+bind s-p prev
+bind p prev
+bind s-n next
+bind n next
+bind s-q kill
+bind q kill
+bind s-k remove
+bind k remove
