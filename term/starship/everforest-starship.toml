@@ -11,9 +11,9 @@ $hostname\
 $git_branch\
 $git_status\
 $cmd_duration\
-[|+++>](bold #A6B0A0)\
+[|>](bold #7AA89F)\
 $fill\
-[<+++|](bold #A6B0A0)\
+[<|](bold #7AA89F)\
 $time\
 $line_break\
 $directory\
@@ -77,7 +77,7 @@ symbol = ' '
 disabled = false
 time_format = "%R"
 style = "bold white"
-format = '[  $time](bold #A6B0A0)'
+format = '[  $time](bold #6A9589)'
 #----------------------------------------------------------
 # Line break / next line
 [line_break]
