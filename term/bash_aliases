@@ -73,6 +73,7 @@ eval "$(starship init bash)"
 
 #set input mode to be vim modal keybinding
 set -o vi
+export EDITOR=nvim
 #----------------------------------------------------------
 
 #----------------------------------------------------------
