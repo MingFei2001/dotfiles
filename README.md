@@ -2,12 +2,40 @@
 
 This is a collection of my config file
 ---
-1. General Vim Configuration
-2. Starship Prompt Configuration
-  - \[Tokyo Night Modified]
-3. Tokyo Night GTK Themes
-  - grab from gnome-looks.org
-4. Tela Circle Icon Themes
-  - grab from gnome-looks.org
-5. Qutebrowser config file
-6. Neofetch configuration
+
+## Table of content
+
+1. Browser
+  - Bookmarks
+  - Qutebrowser config
+2. Text Editor
+  - neovim config
+  - vim config
+3. Terminal
+  - ranger config
+  - starship config
+  - terminal profiles
+  - neofetch config
+  - tmux config
+4. Themes
+  - [GTK themes](#gtk-themes)
+    - GTK+ themes { ... }
+  - Icon themes
+    - Tela Circles { regular , dark , light }
+  - Nerd Fonts
+    - JetBrainsMono Nerd Fonts { ... }
+5. Window Manager
+  - Ratpoison window manager
+
+### GTK Themes
+Catalog of GTK+ themes
+
+1. Tokyonight
+2. Everforest
+3. Kanagawa
+6. Catppuccin
+7. Gruvbox
+8. Rose Pine
+9. Solarized
+10. Dracula
+11. Nordic
