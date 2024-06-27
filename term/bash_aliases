@@ -16,16 +16,10 @@
 
 #----------------------------------------------------------
 # alias for apt operations
-alias in='sudo apt-fast install'
-alias up='sudo apt-fast update && sudo apt-fast upgrade -y'
-alias fup='sudo apt-fast update && sudo apt-fast full-upgrade -y'
-alias autorm='sudo apt autoremove'
-alias autocl='sudo apt autoclean && sudo apt clean'
+alias in='sudo apt install'
+alias up='sudo apt update && sudo apt upgrade -y'
+alias autorm='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 alias aptrm='sudo apt remove'
-#----------------------------------------------------------
-# the old-fashioned apt style
-# alias in='sudo apt install'
-# alias up='sudo apt update && sudo apt upgrade -y'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
@@ -49,24 +43,23 @@ alias duf='duf -hide special'
 alias rng='ranger'
 alias cm='cmatrix'
 alias nf='neofetch'
+alias ff='figlet -f slant.flf Debian | lolcat && fastfetch -l none'
 alias scrwb='scrcpy --window-borderless'
-alias tx='tmux'
-alias ta='tmux a'
+alias gdrive='thunar && rclone mount google-drive: ~/Documents/gdrive/'
+alias zz='zellij --layout compact'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
 # alias for system information call
-# i don't even know how to use awk yet
-alias batt="cat /sys/class/power_supply/BAT0/capacity | awk '{ print \"  Battery: \" \$1 \"%\" }'"
 alias clock='tty-clock -c -B'
-alias btsc="hcitool scan | grep soundcore | awk '{ print \$1 }' | xargs bluetoothctl connect"
 alias off='poweroff'
 alias cl='clear'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
 # run neofetch on startup
-neofetch
+# neofetch
+figlet -f slant.flf Debian | lolcat && fastfetch -l none
 
 # initiate starship prompt when launching terminal
 eval "$(starship init bash)"
@@ -79,3 +72,4 @@ export EDITOR=nvim
 #----------------------------------------------------------
 # EOF
 #----------------------------------------------------------
+export GOPATH=$HOME/go
