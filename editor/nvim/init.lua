@@ -99,7 +99,7 @@ vim.keymap.set('n', '<leader>m', '<cmd>Mason<CR>', { desc = 'Open Mason' })
 
 -- Launch File Tree => neo-tree.nvim
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree<CR>', { desc = 'Open File Tree' })
-vim.keymap.set('n', '<leader>t', '<cmd>t<CR>', { desc = 'Terminal' })
+vim.keymap.set('n', '<leader>t', '<cmd>terminal<CR>', { desc = 'Terminal' })
 
 -- Keybinding for file action (save & quit)
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Exit Neovim' })
