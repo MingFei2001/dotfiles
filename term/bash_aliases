@@ -47,6 +47,7 @@ alias ff='figlet -f slant.flf Debian | lolcat && fastfetch -l none'
 alias scrwb='scrcpy --window-borderless'
 alias gdrive='thunar && rclone mount google-drive: ~/Documents/gdrive/'
 alias zz='zellij --layout compact'
+alias lg='lazygit'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
