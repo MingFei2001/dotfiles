@@ -1,10 +1,11 @@
 # custom script
-figurine -f "Standard.flf" Terminal
+figlet -f "Standard.flf" Terminal
 
 # Set apps launch
 Invoke-Expression (&starship init powershell)
 Import-Module gsudoModule
-winfetch
+
+fastfetch
 
 # Set vim keybinding
 Set-PSReadlineOption -EditMode vi
