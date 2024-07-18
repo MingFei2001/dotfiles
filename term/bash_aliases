@@ -14,6 +14,10 @@
 # change ths when all changes are tested properly
 #----------------------------------------------------------
 
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
+
 #----------------------------------------------------------
 # alias for apt operations
 alias in='sudo apt install'
@@ -48,11 +52,12 @@ alias scrwb='scrcpy --window-borderless'
 alias gdrive='thunar && rclone mount google-drive: ~/Documents/gdrive/'
 alias zz='zellij --layout compact'
 alias lg='lazygit'
+alias cat='batcat --color=always'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
 # alias for system information call
-alias clock='tty-clock -c -B'
+alias clock='tty-clock -c -B -C 7'
 alias off='poweroff'
 alias cl='clear'
 #----------------------------------------------------------
@@ -70,7 +75,8 @@ set -o vi
 export EDITOR=nvim
 #----------------------------------------------------------
 
+export GOPATH=$HOME/go
+
 #----------------------------------------------------------
 # EOF
 #----------------------------------------------------------
-export GOPATH=$HOME/go
