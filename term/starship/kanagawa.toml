@@ -61,7 +61,7 @@ format = '[ [>](bold #FF9E3B) [$hostname](bold #FF9E3B) [>](bold #FF9E3B) ]($sty
 # Current git branch
 [git_branch]
 symbol = ""
-format = '[\[ $symbol $branch \]](#98BB6C bold)'  # springGreen
+format = ' [\[ $symbol $branch \]](#98BB6C bold)'  # springGreen
 
 # Current git status
 [git_status]
@@ -123,7 +123,7 @@ style = "bold #98BB6C"
 format = '[$symbol ($version)]($style)'
 
 [python]
-symbol = ""
+symbol = " "
 style = "bold #7AA89F"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
