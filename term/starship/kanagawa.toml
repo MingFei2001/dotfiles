@@ -1,0 +1,138 @@
+#----------------------------------------------------------
+# 🌊 Kanagawa Starship Custom Theme 🌊
+# ⚙️  Made by Mingfei ⚙️
+# Github: https://github.com/MingFei2001
+#----------------------------------------------------------
+# Main structure
+format = """
+$os\
+$username\
+$hostname\
+$package\
+$cmd_duration\
+$fill\
+$python\
+$golang\
+$nodejs\
+$rust\
+$shell\
+$git_branch\
+$git_status\
+$line_break\
+$directory\
+$character
+"""
+
+#----------------------------------------------------------
+# OS Info
+[os]
+disabled = false
+style = 'bold #957FB8'  # oniViolet
+format = '[$symbol ]($style)'
+# OS Logo variants remain unchanged
+[os.symbols]
+Windows = "[󰍲](#7AA89F)"    # waveAqua2
+Ubuntu = "[ ](#E46876)"     # waveRed
+SUSE = "[](#98BB6C)"        # springGreen
+Mint = "[󰣭](#A3D4D5)"       # lightBlue
+Linux = "[󰌽](#DCA561)"      # autumnYellow
+Gentoo = "[󰣨](#D27E99)"     # sakuraPink
+Fedora = "[󰣛](#7FB4CA)"     # springBlue
+Alpine = "[](#C0A36E)"      # boatYellow2
+Android = "[](#FFA066)"     # surimiOrange
+Arch = "[󰣇](#7AA89F)"       # waveAqua2
+Debian = "[󰣚](#E46876)"     # waveRed
+
+#----------------------------------------------------------
+# User info
+# Username
+[username]
+show_always = true
+style_user = "#7E9CD8 bold"  # crystalBlue
+style_root = "#E82424 bold"  # samuraiRed
+format = '[$user]($style)'
+# hostname
+[hostname]
+ssh_only = false
+format = '[ [>](bold #FF9E3B) [$hostname](bold #FF9E3B) [>](bold #FF9E3B) ]($style)'  # roninYellow
+
+#----------------------------------------------------------
+# Git info
+# Current git branch
+[git_branch]
+symbol = ""
+format = '[\[ $symbol $branch \]](#98BB6C bold)'  # springGreen
+
+# Current git status
+[git_status]
+format = '[(\[ $all_status$ahead_behind \])](#7AA89F bold)'  # waveAqua2
+
+#----------------------------------------------------------
+# Command duration / timer
+[cmd_duration]
+min_time = 75
+format = '[$duration](#DCA561)'  # autumnYellow
+
+#----------------------------------------------------------
+# Bar extender
+[fill]
+symbol = ' '
+
+#----------------------------------------------------------
+# Line break / next line
+[line_break]
+disabled = false
+
+#----------------------------------------------------------
+# Current directory / pwd
+[directory]
+style = "#D27E99 bold"  # sakuraPink
+format = "[$path ]($style)"
+truncation_length = 5
+truncation_symbol = "…/"
+
+#----------------------------------------------------------
+# Indicators
+[character]
+disabled = false
+success_symbol = '[>](#E6C384)'  # carpYellow
+error_symbol = '[>](#E46876)'  # waveRed
+
+# Packages
+[package]
+symbol = "📦"
+style = "bold #DCA561"
+format = '[$symbol $version]($style)'
+
+# Shell
+[shell]
+bash_indicator = ' bash'
+fish_indicator = "󰈺 fish"
+zsh_indicator = "󰬇 zsh"
+powershell_indicator = "󰨊 pwsh"
+unknown_indicator = " shell"
+style = "bold #957FB8"
+format = '[$indicator]($style)'
+disabled = false
+
+#----------------------------------------------------------
+# Languages
+[nodejs]
+symbol = "󰎙 "
+style = "bold #98BB6C"
+format = '[$symbol ($version)]($style)'
+
+[python]
+symbol = ""
+style = "bold #7AA89F"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[rust]
+symbol = ""
+style = "bold #FF9E3B"
+format = '[$symbol ($version)]($style)'
+
+[golang]
+symbol = ""
+style = "bold #7E9CD8"
+format = '[$symbol ($version)]($style)'
