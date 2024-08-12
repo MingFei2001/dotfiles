@@ -19,6 +19,9 @@
 #fi
 
 #----------------------------------------------------------
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 # alias for apt operations
 alias in='sudo apt install'
 alias up='sudo apt update && sudo apt upgrade -y'
