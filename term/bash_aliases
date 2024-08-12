@@ -22,6 +22,7 @@
 # alias for apt operations
 alias in='sudo apt install'
 alias up='sudo apt update && sudo apt upgrade -y'
+alias fup='sudo apt update && sudo apt full-upgrade -y'
 alias autorm='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 alias aptrm='sudo apt remove'
 #----------------------------------------------------------
