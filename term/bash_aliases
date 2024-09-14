@@ -20,9 +20,9 @@
 
 #----------------------------------------------------------
 # launch tmux in any bash terminal emulator
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 
 # alias for apt operations
 alias in='sudo apt install'
@@ -49,6 +49,7 @@ alias submit='git add . && git commit -a && git push'
 #----------------------------------------------------------
 # alias for apps
 alias v='nvim'
+alias em='emacs -nw'
 alias duf='duf -hide special'
 alias rng='ranger'
 alias cm='cmatrix'
@@ -59,6 +60,7 @@ alias gdrive='thunar && rclone mount google-drive: ~/Documents/gdrive/'
 alias zz='zellij --layout compact'
 alias lg='lazygit'
 alias cat='batcat --color=always'
+alias dmenu="dmenu_run -p 'run' -nb '#1F1F28' -nf '#DCD7BA' -sb '#7E9CD8' -sf '#1F1F28' -l 3"
 #----------------------------------------------------------
 
 #----------------------------------------------------------
