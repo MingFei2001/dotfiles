@@ -7,13 +7,20 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
+        output_format = "i3bar"
         colors = true
         interval = 1
 }
 
+# colors {
+#     background = "#2A2A37" # sumiInk1
+#     statusline = "#ffffff" # fujiWhite
+#     separator = "#54546D" # sumiInk4
+# }
+
 # order += "ipv6"
-# order += "wireless _first_"
-# order += "ethernet _first_"
+order += "wireless _first_"
+order += "ethernet _first_"
 order += "battery all"
 order += "volume master"
 # order += "disk /"
@@ -21,28 +28,31 @@ order += "volume master"
 # order += "memory"
 order += "tztime local"
 
-# wireless _first_ {
-#         format_up = "W: (%quality at %essid) %ip"
-#         format_down = "W: down"
-# }
-#
-# ethernet _first_ {
-#         format_up = "E: %ip (%speed)"
-#         format_down = "E: down"
-# }
+wireless _first_ {
+        format_up = "󰖩 :%essid"
+        format_down = "󱚼 down"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = ""
+}
 
 battery all {
         # format = "%status %percentage %remaining"
         format = "%status %percentage"
-        # status_chr: ⚡ CHR
-        # status_bat: 🔋 BAT
-        # status_full: ☻  FULL
-        low_threshold = 10
+        format_down = "󱉝 No Battery"
+        status_chr = "󰢝 :"
+        status_full = "󰂅 :"
+        status_bat = "󰂂 :"
+        status_unk = "󰂑 :"
+        last_full_capacity = true
+        low_threshold = 30
 }
 
 volume master {
-        format = "♪: %volume"
-        format_muted = "♪: muted (%volume)"
+        format = " : %volume"
+        format_muted = "󰝟 : %volume"
         device = "default"
         # device = "pipewire-0"
         mixer = "Master"
@@ -64,5 +74,5 @@ volume master {
 
 tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
-        format = "%d-%m-%y %H:%M"
+        format = "%Y-%m-%d %H:%M"
 }

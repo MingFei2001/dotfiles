@@ -3,10 +3,8 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
 
 # i3 config file (v4)
-#
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -22,16 +20,20 @@ font pango:JetbrainsMono Nerd Font 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id pipewire
+# exec --no-startup-id pipewire
+# exec --no-startup-id wireplumber
+# exec --no-startup-id pipewire-pulse
+# exec --no-startup-id pavucontrol
 exec --no-startup-id compton
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id nitrogen --restore
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -51,28 +53,27 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+w exec brave-browser
-#bindsym $mod+w exec firefox
-bindsym $mod+f exec thunar
+# Application Keybindings
+set $terminal kitty
+set $browser brave-browser
+set $fm thunar
+
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $terminal
+bindsym $mod+w exec $browser
+bindsym $mod+f exec $fm
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Escape exec dmenu_run -p "run" -nb '#1F1F28' -nf '#DCD7BA' -sb '#7E9CD8' -sf '#1F1F28' -l 3
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# change focus with vim keybindings
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -81,10 +82,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -99,24 +100,27 @@ bindsym $mod+s split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-# bindsym $mod+f fullscreen toggle
+bindsym $mod+F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
+# bindsym $mod+e layout toggle split
 bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
+
+# Set tabbed layout as default
+for_window [class="^.*"] layout tabbed
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -160,7 +164,25 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Delete exec "i3-nagbar -t warning -m 'Logout from this session?' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Delete exec "i3-nagbar -t warning -m 'Logout from this session?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+set $mode_system System (l) lock, (e) logout, (r) reboot, (s) shutdown
+
+mode "$mode_system" {
+    bindsym l exec --no-startup-id "sleep 0.5 && systemctl suspend", mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    # bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
+    # bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    # bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+BackSpace mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -189,8 +211,38 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+default_border pixel 3
+# gaps inner 1
+# gaps outer 1
+
+# i3 default border color
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# Kanagawa Colors for i3
+client.focused          #2A2A37 #2A2A37 #ffffff #2A2A37
+client.focused_inactive #54546D #54546D #ffffff #54546D
+client.unfocused        #1F1F28 #1F1F28 #888888 #1F1F28
+client.urgent           #E82424 #E82424 #ffffff #E82424
+client.placeholder      #2A2A37 #2A2A37 #ffffff #2A2A37
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
+
+    colors{
+        background #16161D
+        statusline #ffffff
+        separator #54546D
+
+        focused_workspace  #1F1F28 #2A2A37 #DCD7BA
+        active_workspace   #1F1F28 #16161D #DCD7BA
+        inactive_workspace #16161D #1F1F28 #C8C093
+        urgent_workspace   #C34043 #C34043 #DCD7BA
+        binding_mode       #1F1F28 #223249 #DCD7BA
+    }
 }
