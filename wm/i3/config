@@ -24,6 +24,7 @@ exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id wireplumber
 # exec --no-startup-id pipewire-pulse
 # exec --no-startup-id pavucontrol
+exec --no-startup-id /usr/libexec/polkit-mate-authentication-agent-1
 exec --no-startup-id compton
 exec --no-startup-id flameshot
 exec --no-startup-id conky -c ~/.config/conky/conky.conf
@@ -245,6 +246,7 @@ client.placeholder      #2A2A37 #2A2A37 #ffffff #2A2A37
 # finds out, if available)
 bar {
     status_command i3status
+    # separator_symbol "​"
 
     colors{
         background #16161D
