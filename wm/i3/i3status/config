@@ -9,23 +9,23 @@
 general {
         output_format = "i3bar"
         colors = true
+	color_good = "#76946a"      # Kanagawa Autumn Green
+	color_degraded = "#ffa066"  # Kanagawa Surimi Orange
+	color_bad = "#c34043"       # Kanagawa Samurai Red
         interval = 1
 }
-
-# colors {
-#     background = "#2A2A37" # sumiInk1
-#     statusline = "#ffffff" # fujiWhite
-#     separator = "#54546D" # sumiInk4
-# }
 
 # order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
+order += "cpu_usage"
+# order += "cpu_temperature 1"
+# order += "load"
+order += "memory"
+order += "disk /"
 order += "battery all"
 order += "volume master"
-# order += "disk /"
-# order += "load"
-# order += "memory"
+order += "time"
 order += "tztime local"
 
 wireless _first_ {
@@ -46,6 +46,7 @@ battery all {
         status_full = "󰂅 :"
         status_bat = "󰂂 :"
         status_unk = "󰂑 :"
+        integer_battery_capacity = true
         last_full_capacity = true
         low_threshold = 30
 }
@@ -58,21 +59,36 @@ volume master {
         mixer = "Master"
 }
 
-# disk "/" {
-#         format = "%avail"
-# }
-#
+disk "/" {
+        format = " : %used/%total"
+        prefix_type = custom
+}
+
 # load {
 #         format = "%1min"
 # }
-#
-# memory {
-#         format = "%used | %available"
-#         threshold_degraded = "1G"
-#         format_degraded = "MEMORY < %available"
+
+cpu_usage {
+        format = " : %usage"
+        max_threshold = 80
+}
+
+# cpu_temperature 1 {
+#         format = ": %degrees °C"
+#         max_threshold = 100
 # }
+
+memory {
+        format = "󰄦 : %percentage_used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+time {
+        format = "󰃭 : %Y/%m/%d"
+}
 
 tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
-        format = "%Y-%m-%d %H:%M"
+        format = "󰥔 : %H:%M"
 }
