@@ -282,13 +282,13 @@ bar {
 
     # Everforest Colors for i3status bar
     colors {
-        background #2B3339      # background0
-        statusline #FFFFFF      # white text for statusline
-        separator  #FFFFFF      # white separator
+        background #2B3339
+        statusline #FFFFFF
+        separator  #FFFFFF
 
-        focused_workspace  #2B3339 #2B3339 #FFFFFF  # background0, background0, white text
-        active_workspace   #2B3339 #323D43 #C0C0C0  # background0, background1, dimmed white (gray) text
-        inactive_workspace #323D43 #2B3339 #C0C0C0  # background1, background0, dimmed white (gray) text
-        urgent_workspace   #E67E80 #E67E80 #FFFFFF  # red, red, white text
-        binding_mode       #2B3339 #323D43 #FFFFFF  # background0, brighter red, white text
+        focused_workspace  #2B3339 #2B3339 #FFFFFF
+        active_workspace   #2B3339 #323D43 #C0C0C0
+        inactive_workspace #323D43 #2B3339 #C0C0C0
+        urgent_workspace   #E67E80 #E67E80 #FFFFFF
+        binding_mode       #2B3339 #323D43 #FFFFFF
     }}
