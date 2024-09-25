@@ -20,6 +20,7 @@ $directory\
 $character
 """
 
+#######################################
 palette = "everforest"
 
 # Everforest color palette for Starship
@@ -34,6 +35,7 @@ blue = "#7fbbb3"
 magenta = "#d699b6"
 cyan = "#83c092"
 white = "#d3c6aa"
+grey = "#868d80"
 bold_black = "#4c555b"
 bold_red = "#f85552"
 bold_green = "#a7c080"
@@ -42,6 +44,28 @@ bold_blue = "#7fbbb3"
 bold_magenta = "#d699b6"
 bold_cyan = "#83c092"
 bold_white = "#d3c6aa"
+
+[palettes.kanagawa]
+background = "#1F1F28"
+foreground = "#DCD7BA"
+black = "#16161D"
+red = "#C34043"
+green = "#76946A"
+yellow = "#DCA561"
+blue = "#7E9CD8"
+magenta = "#957FB8"
+cyan = "#7AA89F"
+white = "#C8C093"
+grey = "#727169" # need changes
+bold_black = "#54546D"
+bold_red = "#E82424"
+bold_green = "#98BB6C"
+bold_yellow = "#FF9E3B"
+bold_blue = "#7FB4CA"
+bold_magenta = "#957FB8"
+bold_cyan = "#7AA89F"
+bold_white = "#DCD7BA"
+#######################################
 
 # OS Info
 [os]
@@ -87,7 +111,7 @@ format = '[(\[ $all_status$ahead_behind \])](bold green)'
 # Command Duration
 [cmd_duration]
 min_time = 75
-format = '[$duration](bold yellow)'
+format = '[$duration](bold grey)'
 
 # Line Break
 [line_break]
