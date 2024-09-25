@@ -10,9 +10,10 @@ $python\
 $golang\
 $nodejs\
 $rust\
-$shell\
 $git_branch\
 $git_status\
+$jobs\
+$shell\
 $line_break\
 $directory\
 $character
