@@ -11,6 +11,7 @@ $python\
 $golang\
 $nodejs\
 $rust\
+$docker_context\
 $git_branch\
 $git_status\
 $jobs\
@@ -174,3 +175,7 @@ format = '[$symbol ($version)]($style)'
 symbol = "󰟓 "
 style = "bold green"
 format = '[$symbol ($version)]($style)'
+
+# Docker Context
+[docker_context]
+symbol = "󰡨 "
