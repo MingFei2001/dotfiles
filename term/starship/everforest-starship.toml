@@ -1,6 +1,7 @@
+# Starship.rs Config File
+
 # Main structure
-format = """
-$os\
+format = """$os\
 $username\
 $hostname\
 $package\
@@ -19,85 +20,100 @@ $directory\
 $character
 """
 
-#----------------------------------------------------------
+palette = "everforest"
+
+# Everforest color palette for Starship
+[palettes.everforest]
+background = "#2b3339"
+foreground = "#d3c6aa"
+black = "#323d43"
+red = "#e67e80"
+green = "#a7c080"
+yellow = "#d8a657"
+blue = "#7fbbb3"
+magenta = "#d699b6"
+cyan = "#83c092"
+white = "#d3c6aa"
+bold_black = "#4c555b"
+bold_red = "#f85552"
+bold_green = "#a7c080"
+bold_yellow = "#e6c181"
+bold_blue = "#7fbbb3"
+bold_magenta = "#d699b6"
+bold_cyan = "#83c092"
+bold_white = "#d3c6aa"
+
 # OS Info
 [os]
 disabled = false
-style = 'bold #A7C080'  # green (Everforest)
+style = 'bold green'
 format = '[$symbol ]($style)'
-# OS Logo variants remain unchanged
-[os.symbols]
-Windows = "[󰍲](#A3BE8C)"    # green (Everforest)
-Ubuntu = "[ ](#E67E80)"    # red (Everforest)
-SUSE = "[](#A7C080)"      # green (Everforest)
-Mint = "[󰣭](#A7C080)"      # green (Everforest)
-Linux = "[󰌽](#D8A657)"     # yellow (Everforest)
-Gentoo = "[󰣨](#D3C6AA)"    # text (Everforest)
-Fedora = "[󰣛](#A7C080)"    # green (Everforest)
-Alpine = "[](#D8A657)"    # yellow (Everforest)
-Android = "[](#E67E80)"   # red (Everforest)
-Arch = "[󰣇](#A3BE8C)"      # green (Everforest)
-Debian = "[󰣚](#E67E80)"    # red (Everforest)
 
-#----------------------------------------------------------
-# User info
+# OS Logo
+[os.symbols]
+Windows = "[󰍲](bold green)"
+Ubuntu = "[](bold red)"
+SUSE = "[](bold green)"
+Mint = "[󰣭](bold green)"
+Linux = "[󰌽](bold yellow)"
+Gentoo = "[󰣨](bold white)"
+Fedora = "[󰣛](bold green)"
+Alpine = "[](bold yellow)"
+Android = "[](bold red)"
+Arch = "[󰣇](bold green)"
+Debian = "[󰣚](bold red)"
+
 # Username
 [username]
 show_always = true
-style_user = "#D3C6AA bold"  # text (Everforest)
-style_root = "#E67E80 bold"  # red (Everforest)
+style_user = "white bold"
+style_root = "red bold"
 format = '[$user]($style)'
-# hostname
+
+# Hostname
 [hostname]
 ssh_only = false
-format = '[ [>](bold #D8A657) [$hostname](bold #D8A657) [>](bold #D8A657) ]($style)'  # yellow (Everforest)
+format = '[ [>](bold yellow) [$hostname](bold yellow) [>](bold yellow) ]($style)'
 
-#----------------------------------------------------------
-# Git info
-# Current git branch
+# Git Branch
 [git_branch]
-symbol = ""
-format = ' [\[ $symbol $branch \]](#A7C080 bold)'  # green (Everforest)
+symbol = " "
+format = ' [\[ $symbol $branch \]](bold green)'
 
-# Current git status
+# Git Status
 [git_status]
-format = '[(\[ $all_status$ahead_behind \])](#A7C080 bold)'  # green (Everforest)
+format = '[(\[ $all_status$ahead_behind \])](bold green)'
 
-#----------------------------------------------------------
-# Command duration / timer
+# Command Duration
 [cmd_duration]
 min_time = 75
-format = '[$duration](#D8A657)'  # yellow (Everforest)
+format = '[$duration](bold yellow)'
 
-#----------------------------------------------------------
+# Line Break
+[line_break]
+disabled = false
+
 # Bar extender
 [fill]
 symbol = ' '
 
-#----------------------------------------------------------
-# Line break / next line
-[line_break]
-disabled = false
-
-#----------------------------------------------------------
-# Current directory / pwd
+# Current Directory
 [directory]
-style = "#D3C6AA bold"  # text (Everforest)
+style = "white bold"
 format = "[$path ]($style)"
 truncation_length = 5
 truncation_symbol = "…/"
 
-#----------------------------------------------------------
-# Indicators
+# Character
 [character]
 disabled = false
-success_symbol = '[>](#A7C080)'  # green (Everforest)
-error_symbol = '[>](#E67E80)'    # red (Everforest)
+success_symbol = '[>](bold green)'
+error_symbol = '[>](bold red)'
 
-# Packages
+# Package
 [package]
 symbol = "📦"
-style = "bold #D8A657"
+style = "bold yellow"
 format = '[$symbol $version]($style)'
 
 # Shell
@@ -107,28 +123,30 @@ fish_indicator = "󰈺 fish"
 zsh_indicator = "󰬇 zsh"
 powershell_indicator = "󰨊 pwsh"
 unknown_indicator = " shell"
-style = "bold #A7C080"
+style = "bold green"
 format = '[$indicator]($style)'
 disabled = false
 
-#----------------------------------------------------------
-# Languages
+# NodeJS
 [nodejs]
-symbol = "󰎙"
-style = "bold #A7C080"
+symbol = "󰎙 "
+style = "bold green"
 format = '[$symbol ($version) ]($style)'
 
+# Python
 [python]
 symbol = " "
-style = "bold #A7C080"
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bold green"
+format = '[${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)'
 
+# Rust
 [rust]
-symbol = ""
-style = "bold #D8A657"
+symbol = "󱘗 "
+style = "bold yellow"
 format = '[$symbol ($version)]($style)'
 
+# GoLang
 [golang]
-symbol = ""
-style = "bold #A7C080"
+symbol = "󰟓 "
+style = "bold green"
 format = '[$symbol ($version)]($style)'
