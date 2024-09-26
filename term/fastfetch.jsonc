@@ -43,6 +43,11 @@
       "key": " GPU",
       "keyColor": "38;5;133",
       "type": "gpu"
+    },
+    {
+      "key": " IP",
+      "keyColor": "38;5;93",
+      "type": "localip"
     }
   ]
 }
