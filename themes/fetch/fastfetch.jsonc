@@ -45,9 +45,14 @@
       "type": "gpu"
     },
     {
-      "key": " IP",
-      "keyColor": "38;5;93",
+      "key": " LAN IP",
+      "keyColor": "38;5;96",
       "type": "localip"
+    },
+    {
+      "key": " WAN IP",
+      "keyColor": "38;5;93",
+      "type": "publicip"
     }
   ]
 }
