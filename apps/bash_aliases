@@ -66,7 +66,7 @@ alias dmenu="dmenu_run -p 'run' -nb '#1F1F28' -nf '#DCD7BA' -sb '#7E9CD8' -sf '#
 #----------------------------------------------------------
 # alias for system information call
 alias clock='tty-clock -c -B -C 7'
-alias off='poweroff'
+alias gg='sudo poweroff'
 alias cl='clear'
 #----------------------------------------------------------
 
