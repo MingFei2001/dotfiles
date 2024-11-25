@@ -101,10 +101,6 @@ vim.keymap.set('n', '<leader>m', '<cmd>Mason<CR>', { desc = 'Open Mason' })
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree<CR>', { desc = 'Open File Tree' })
 vim.keymap.set('n', '<leader>t', '<cmd>terminal<CR>', { desc = 'Terminal' })
 
--- Keybinding for file action (save & quit)
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Exit Neovim' })
-vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save File' })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
