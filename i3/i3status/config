@@ -60,7 +60,7 @@ volume master {
 }
 
 disk "/" {
-        format = " : %used/%total"
+        format = " : %percentage_used"
         prefix_type = custom
 }
 
