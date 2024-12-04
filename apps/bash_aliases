@@ -57,7 +57,6 @@ alias ff='figlet -f slant.flf Debian | lolcat && fastfetch -l none'
 alias gdrive='thunar && rclone mount google-drive: ~/Documents/gdrive/'
 alias lg='lazygit'
 alias cat='batcat --color=always'
-alias dmenu="dmenu_run -p 'run' -nb '#1F1F28' -nf '#DCD7BA' -sb '#7E9CD8' -sf '#1F1F28' -l 3"
 alias py="python3"
 #----------------------------------------------------------
 
