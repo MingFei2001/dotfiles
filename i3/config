@@ -18,9 +18,9 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id /usr/libexec/polkit-mate-authentication-agent-1
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id conky -c ~/.config/conky/conky.conf
-exec --no-startup-id conky -c ~/.config/conky/Gotham/Gotham
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id conky -c ~/.config/conky/conky.conf
+# exec --no-startup-id conky -c ~/.config/conky/Gotham/Gotham
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -52,6 +52,7 @@ bindsym $mod+g exec steam -bigpicture
 bindsym Print exec $ss
 # rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
+bindsym $mod+d exec dmenu_run -p "run" -nb '#2B3339' -nf '#D3C6AA' -sb '#A7C080' -sf '#2B3339' -l 3
 
 ## Window keybindings
 # Change focused window with cursor key
@@ -71,10 +72,10 @@ bindsym $mod+F11 fullscreen toggle
 # kill focused window
 bindsym $mod+q kill
 
-# change container layout
 bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 bindsym $mod+t layout tabbed
+bindsym $mod+v split v
 
 ## Floating windows keybindings
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -85,6 +86,12 @@ tiling_drag modifier titlebar
 bindsym $mod+Insert floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# Scratchpad keybindings
+# Make the currently focused window a scratchpad
+bindsym $mod+plus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 ## Multi window situation
 bindsym $mod+bracketleft move container to output left
