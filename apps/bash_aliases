@@ -36,6 +36,7 @@ alias aptrm='sudo apt remove'
 # some terminal shortcut
 # allow the creation of subdirectories
 alias mkdir='mkdir -pv'
+alias rmdir='rmdir -pv'
 
 # allow interactive mode
 alias mv='mv -i'
