@@ -59,6 +59,7 @@ alias gdrive='thunar && rclone mount google-drive: ~/Documents/gdrive/'
 alias lg='lazygit'
 alias cat='batcat --color=always'
 alias py="python3"
+alias mc='mocp'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
