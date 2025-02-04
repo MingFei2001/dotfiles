@@ -53,6 +53,7 @@ bindsym $mod+b exec blueman-manager
 bindsym $mod+m exec $mail
 bindsym Print exec $ss
 bindsym Mod1+F9 exec xfce4-find-cursor
+bindsym $mod+v exec pavucontrol
 # rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#2B3339' -nf '#D3C6AA' -sb '#A7C080' -sf '#2B3339' -l 3
@@ -75,10 +76,10 @@ bindsym $mod+F11 fullscreen toggle
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 bindsym $mod+t layout tabbed
-bindsym $mod+v split v
+bindsym $mod+s split v
 
 ## Floating windows keybindings
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -158,8 +159,8 @@ mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    # bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
-    # bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+    bindsym Shift+L exec --no-startup-id loginctl lock-session, mode "default"
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
