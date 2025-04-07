@@ -21,7 +21,6 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id conky -c ~/.config/conky/conky.conf
-exec --no-startup-id powerprofilesctl set performance
 exec --no-startup-id powermode-indicator
 # exec --no-startup-id conky -c ~/.config/conky/Gotham/Gotham
 
@@ -54,6 +53,7 @@ bindsym $mod+m exec $mail
 bindsym Print exec $ss
 bindsym Mod1+F9 exec xfce4-find-cursor
 bindsym $mod+v exec pavucontrol
+bindsym $mod+n exec nitrogen
 # rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#2B3339' -nf '#D3C6AA' -sb '#A7C080' -sf '#2B3339' -l 3
