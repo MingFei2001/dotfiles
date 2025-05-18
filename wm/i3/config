@@ -56,7 +56,9 @@ bindsym $mod+v exec pavucontrol
 bindsym $mod+n exec nitrogen
 # rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
+bindsym Ctrl+space exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#2B3339' -nf '#D3C6AA' -sb '#A7C080' -sf '#2B3339' -l 3
+bindsym $mod+c exec xfce4-clipman-history
 
 ## Window keybindings
 # Change focused window with cursor key
