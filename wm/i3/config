@@ -57,7 +57,7 @@ bindsym $mod+n exec nitrogen
 # rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym Ctrl+space exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
-bindsym $mod+d exec dmenu_run -p "run" -nb '#2B3339' -nf '#D3C6AA' -sb '#A7C080' -sf '#2B3339' -l 3
+bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
 bindsym $mod+c exec xfce4-clipman-history
 
 ## Window keybindings
@@ -189,34 +189,83 @@ smart_borders on
 # gaps inner 1
 # gaps outer 1
 
-## Border colors
-# Everforest Colors for i3
-client.focused          #2B3339 #A7C080 #4B6043 #A7C080
-client.focused_inactive #2B3339 #DBBC7F #4B6043 #DBBC7F
-client.unfocused        #323D43 #323D43 #4B6043 #323D43
-client.urgent           #E67E80 #E67E80 #4B6043 #E67E80
-client.placeholder      #2B3339 #323D43 #4B6043 #2B3339
+
+set $rosewater #f4dbd6
+set $flamingo #f0c6c6
+set $pink #f5bde6
+set $mauve #c6a0f6
+set $red #ed8796
+set $maroon #ee99a0
+set $peach #f5a97f
+set $yellow #eed49f
+set $green #a6da95
+set $teal #8bd5ca
+set $sky #91d7e3
+set $sapphire #7dc4e4
+set $blue #8aadf4
+set $lavender #b7bdf8
+set $text #cad3f5
+set $subtext1 #b8c0e0
+set $subtext0 #a5adcb
+set $overlay2 #939ab7
+set $overlay1 #8087a2
+set $overlay0 #6e738d
+set $surface2 #5b6078
+set $surface1 #494d64
+set $surface0 #363a4f
+set $base #24273a
+set $mantle #1e2030
+set $crust #181926
+
+# Catppuccin
+client.focused           $lavender $lavender $crust  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $base $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 # Start i3bar to display a workspace bar
 bar {
     status_command i3status
+    position top
 
     # Everforest Colors for i3status bar
         colors {
-            background #2B3339
-                statusline #FFFFFF
-                separator  #FFFFFF
+                background         $base
+                statusline         $text
+                focused_statusline $text
+                focused_separator  $base
 
-                focused_workspace  #2B3339 #2B3339 #FFFFFF
-                active_workspace   #2B3339 #323D43 #C0C0C0
-                inactive_workspace #323D43 #2B3339 #C0C0C0
-                urgent_workspace   #E67E80 #E67E80 #FFFFFF
-                binding_mode       #2B3339 #323D43 #FFFFFF
+                # target           border bg        text
+                focused_workspace  $base  $mauve    $crust
+                active_workspace   $base  $surface2 $text
+                inactive_workspace $base  $base     $text
+                urgent_workspace   $base  $red      $crust
+
         }
 }
 
 
 #### UNUSED CODE
+# Everforest Colors for i3
+# client.focused          #2B3339 #A7C080 #4B6043 #A7C080
+# client.focused_inactive #2B3339 #DBBC7F #4B6043 #DBBC7F
+# client.unfocused        #323D43 #323D43 #4B6043 #323D43
+# client.urgent           #E67E80 #E67E80 #4B6043 #E67E80
+# client.placeholder      #2B3339 #323D43 #4B6043 #2B3339
+## Everforest Colors for i3status bar
+# colors{
+    # background #2B3339
+    # statusline #FFFFFF
+    # separator  #FFFFFF
+    #
+    # focused_workspace  #2B3339 #2B3339 #FFFFFF
+    # active_workspace   #2B3339 #323D43 #C0C0C0
+    # inactive_workspace #323D43 #2B3339 #C0C0C0
+    # urgent_workspace   #E67E80 #E67E80 #FFFFFF
+    # binding_mode       #2B3339 #323D43 #FFFFFF
+#}
 
 ### Kanagawa colorscheme config
 ## Kanagawa Border Colors for i3
