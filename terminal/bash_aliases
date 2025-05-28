@@ -60,6 +60,10 @@ alias lg='lazygit'
 alias cat='batcat --color=always'
 alias py="python3"
 alias mc='mocp'
+
+alias fzfk='ps aux | fzf --header-lines=1 \
+  --preview "echo {} | awk '\''{print \$2}'\'' | xargs -I{} ps -p {} -o %cpu,%mem,cmd -h" \
+  | awk "{print \$2}" | xargs kill'
 #----------------------------------------------------------
 
 #----------------------------------------------------------
@@ -67,6 +71,8 @@ alias mc='mocp'
 alias clock='tty-clock -c -B -C 7'
 alias gg='sudo poweroff'
 alias cl='clear'
+alias prox="ssh -D 1337 -N -C mingfei@103.3.63.83"
+alias brave-prox="brave-browser --proxy-server='socks5://localhost:1337'"
 #----------------------------------------------------------
 
 #----------------------------------------------------------
