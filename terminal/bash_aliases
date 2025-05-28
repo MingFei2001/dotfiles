@@ -76,7 +76,7 @@ alias brave-prox="brave-browser --proxy-server='socks5://localhost:1337'"
 #----------------------------------------------------------
 
 #----------------------------------------------------------
-# run neofetch on startup
+# run fastfetch on startup
 # neofetch
 figlet -f slant.flf Debian | lolcat && fastfetch -l none
 
