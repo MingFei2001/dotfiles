@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless specified
-font pango:JetbrainsMono Nerd Font 11
+font pango:JetbrainsMono Nerd Font Bold 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -21,8 +21,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id conky -c ~/.config/conky/conky.conf
+exec --no-startup-id blueman-applet
 exec --no-startup-id powermode-indicator
-# exec --no-startup-id conky -c ~/.config/conky/Gotham/Gotham
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -43,7 +43,7 @@ set $fm thunar
 set $ss flameshot gui
 set $display arandr
 set $mail thunderbird
-# keybindings
+# Applications keybindings
 bindsym $mod+Return exec $terminal
 bindsym $mod+w exec $browser
 bindsym $mod+f exec $fm
@@ -54,7 +54,7 @@ bindsym Print exec $ss
 bindsym Mod1+F9 exec xfce4-find-cursor
 bindsym $mod+v exec pavucontrol
 bindsym $mod+n exec nitrogen
-# rofi Keybindings (application launcher)
+# Rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym Ctrl+space exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
@@ -92,6 +92,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Insert floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+bindsym $mod+x bar mode toggle
 
 # Scratchpad keybindings
 # Make the currently focused window a scratchpad
@@ -228,7 +229,7 @@ client.background        $base
 # Start i3bar to display a workspace bar
 bar {
     status_command i3status
-    position top
+    position bottom
 
     # Everforest Colors for i3status bar
         colors {
