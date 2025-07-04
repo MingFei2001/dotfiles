@@ -153,6 +153,8 @@ bindsym $mod+Next workspace next
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+bindsym $mod+l exec --no-startup-id "sleep 0.5 && systemctl suspend"
+bindsym $mod+Shift+L exec --no-startup-id loginctl lock-session
 
 ## Logout menu (replacing the default exit i3 command)
 # These bindings trigger as soon as you enter the menu
