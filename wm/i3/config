@@ -16,7 +16,7 @@ font pango:JetbrainsMono Nerd Font Bold 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id /usr/libexec/polkit-mate-authentication-agent-1
-exec --no-startup-id picom
+exec --no-startup-id picom --config /home/mingfei/.config/picom/picom.conf
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-clipman
@@ -59,6 +59,7 @@ bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-
 bindsym Ctrl+space exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
 bindsym $mod+c exec xfce4-clipman-history
+bindsym Ctrl+Shift+Escape exec missioncenter
 
 ## Window keybindings
 # Change focused window with cursor key
