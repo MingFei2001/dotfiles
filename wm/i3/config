@@ -23,6 +23,7 @@ exec --no-startup-id xfce4-clipman
 exec --no-startup-id conky -c ~/.config/conky/conky.conf
 exec --no-startup-id blueman-applet
 exec --no-startup-id powermode-indicator
+exec --no-startup-id xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -t bool -s true
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -60,6 +61,8 @@ bindsym Ctrl+space exec "rofi -combi-modi window,drun,run -show combi -display-c
 bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
 bindsym $mod+c exec xfce4-clipman-history
 bindsym Ctrl+Shift+Escape exec missioncenter
+
+bindsym $mod+k exec notify-send "$(playerctl play-pause && playerctl metadata xesam:title && playerctl status)"
 
 ## Window keybindings
 # Change focused window with cursor key
