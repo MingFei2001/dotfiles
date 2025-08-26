@@ -40,7 +40,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # set application name to variable
 set $terminal kitty
 set $browser brave-browser
-set $fm thunar
+set $fm nemo
 set $ss flameshot gui
 set $display arandr
 set $mail thunderbird
@@ -53,13 +53,13 @@ bindsym $mod+b exec blueman-manager
 bindsym $mod+m exec $mail
 bindsym Print exec $ss
 bindsym Mod1+F9 exec xfce4-find-cursor
-bindsym $mod+v exec GTK_THEME=Catppuccin-Macchiato-B pavucontrol
+bindsym $mod+V exec GTK_THEME=Catppuccin-Macchiato-B pavucontrol
 bindsym $mod+n exec nitrogen
 # Rofi Keybindings (application launcher)
 bindsym $mod+Escape exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym Ctrl+space exec "rofi -combi-modi window,drun,run -show combi -display-combi 'run'"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
-bindsym $mod+c exec xfce4-clipman-history
+bindsym $mod+v exec xfce4-clipman-history
 bindsym Ctrl+Shift+Escape exec missioncenter
 
 bindsym $mod+k exec notify-send "$(playerctl play-pause && playerctl metadata xesam:title && playerctl status)"
