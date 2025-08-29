@@ -1,11 +1,13 @@
 /**
+ * Author : MingFei2001
+ * Rofi Theme File (Catppuccin Macchiato)
  *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File (Catppuccin Macchiato – Dark Background, Purple Active, Consistent Highlight Text)
- * Rofi Version: 1.7.3
- **/
+ * Thanks to the original author for making such an amazing theme
+ * Original Author : Aditya Shakya (@adi1090x)
+ *
+ * Found this theme from a github page and love it so much that i
+ * convert it to catppuccin macchiato colorscheme and nailed it lol
+**/
 
 /*****----- Configuration -----*****/
 configuration {
