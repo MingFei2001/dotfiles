@@ -67,7 +67,7 @@ bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6'
 bindsym $mod+v exec xfce4-clipman-history
 bindsym Ctrl+Shift+Escape exec missioncenter
 
-bindsym $mod+k exec notify-send -r 10001"$(playerctl play-pause && playerctl metadata xesam:title && playerctl status)"
+bindsym $mod+k exec notify-send -r 10001 "$(playerctl play-pause && playerctl metadata xesam:title && playerctl status)"
 
 ## Window keybindings
 # Change focused window with cursor key
