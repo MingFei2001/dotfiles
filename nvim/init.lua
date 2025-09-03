@@ -648,18 +648,31 @@ require('lazy').setup({
   --   vim.cmd.colorscheme 'kanagawa'
   -- end,
 
+  -- {
+  --   'neanias/everforest-nvim',
+  --   -- version = false,
+  --   -- lazy = false,
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   -- Optional; default configuration will be used if setup isn't called.
+  --   init = function()
+  --     vim.cmd.colorscheme 'everforest'
+  --   end,
+  --   config = function()
+  --     require('everforest').setup {
+  --       background = 'hard',
+  --     }
+  --   end,
+  -- },
   {
-    'neanias/everforest-nvim',
-    -- version = false,
-    -- lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    -- Optional; default configuration will be used if setup isn't called.
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'everforest'
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
     config = function()
-      require('everforest').setup {
-        background = 'hard',
+      require('catppuccin').setup {
+        background = 'mocha',
       }
     end,
   },
