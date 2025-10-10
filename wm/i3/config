@@ -34,8 +34,8 @@ exec --no-startup-id nm-applet
 
 ## Audio control keybindings (pactl)
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status && notify-send -r 9999 "  Volume: $(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | head -n1)"
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status && notify-send -r 9999 " Volume: $(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | head -n1)"
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status && notify-send -r 9999 "  Volume: $(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | head -n1)"
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status && notify-send -r 9999 " Volume: $(pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | head -n1)"
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status && ( pactl get-sink-mute @DEFAULT_SINK@ | grep -q "yes" && notify-send -r 9999 "  Audio Muted" || notify-send -r 9999 "  Audio Unmuted" )
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status && ( pactl get-source-mute @DEFAULT_SOURCE@ | grep -q yes && notify-send -r 10000 "  Mic Muted" || notify-send -r 10000 "  Mic Unmuted" )
 
@@ -58,6 +58,7 @@ bindsym Print exec $ss
 bindsym Mod1+F9 exec xfce4-find-cursor
 bindsym $mod+Shift+v exec GTK_THEME=Catppuccin-Macchiato-B pavucontrol
 bindsym $mod+n exec nitrogen
+bindsym $mod+Shift+n exec nitrogen --restore
 bindsym $mod+Escape exec "rofi -show drun"
 bindsym Ctrl+space exec "rofi -show drun"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
