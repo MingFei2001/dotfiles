@@ -40,7 +40,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status && ( pactl get-source-mute @DEFAULT_SOURCE@ | grep -q yes && notify-send -r 10000 "  Mic Muted" || notify-send -r 10000 "  Mic Unmuted" )
 
 ## Application Keybindings
-# set application name to variable
+# set application name as variable
 set $terminal kitty
 set $browser brave-browser
 set $fm nemo
@@ -52,20 +52,23 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+w exec $browser
 bindsym $mod+f exec $fm
 bindsym $mod+p exec $display
+bindsym $mod+Shift+p exec autorandr -l "laptop-screen"
 bindsym $mod+b exec blueman-manager
 bindsym $mod+m exec $mail
 bindsym Print exec $ss
-bindsym Mod1+F9 exec xfce4-find-cursor
-bindsym $mod+Shift+v exec GTK_THEME=Catppuccin-Macchiato-B pavucontrol
 bindsym $mod+n exec nitrogen
 bindsym $mod+Shift+n exec nitrogen --restore
+bindsym $mod+Shift+v exec GTK_THEME=Catppuccin-Macchiato-B pavucontrol
+bindsym Mod1+F9 exec xfce4-find-cursor
 bindsym $mod+Escape exec "rofi -show drun"
 bindsym Ctrl+space exec "rofi -show drun"
 bindsym $mod+d exec dmenu_run -p "run" -nb '#24273a' -nf '#cad3f5' -sb '#c6a0f6' -sf '#24273a' -l 3
 bindsym $mod+v exec xfce4-clipman-history
 bindsym Ctrl+Shift+Escape exec missioncenter
 
+# Custom application macros
 bindsym $mod+k exec notify-send -r 10001 "$(playerctl play-pause && playerctl metadata xesam:title && playerctl status)"
+bindsym $mod+Shift+t exec /home/mingfei/Projects/bash-script/X11-Text-Extractor-Script/ocr-screenshot.sh
 
 ## Window keybindings
 # Change focused window with cursor key
