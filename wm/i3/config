@@ -68,7 +68,7 @@ bindsym Ctrl+Shift+Escape exec missioncenter
 
 # Custom application macros
 bindsym $mod+k exec notify-send -r 10001 "$(playerctl play-pause && playerctl metadata xesam:title && playerctl status)"
-bindsym $mod+Shift+t exec /home/mingfei/Projects/bash-script/X11-Text-Extractor-Script/ocr-screenshot.sh
+bindsym $mod+Shift+t exec /home/mingfei/.config/i3/scripts/ocr-screenshot.sh
 
 ## Window keybindings
 # Change focused window with cursor key
