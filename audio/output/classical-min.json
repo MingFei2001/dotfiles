@@ -45,7 +45,7 @@
             "release": 200.0,
             "release-threshold": -80.01,
             "sidechain": {
-                "lookahead": 20.0,
+                "lookahead": 0.0,
                 "mode": "RMS",
                 "preamp": 0.0,
                 "reactivity": 250.0,
@@ -74,7 +74,7 @@
                 "band0": {
                     "frequency": 392.0,
                     "gain": -18.0,
-                    "mode": "RLC (MT)",
+                    "mode": "RLC (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x1",
@@ -83,7 +83,7 @@
                     "width": 4.0
                 }
             },
-            "mode": "SPM",
+            "mode": "IIR",
             "num-bands": 1,
             "output-gain": 0.0,
             "pitch-left": 0.0,
@@ -92,7 +92,7 @@
                 "band0": {
                     "frequency": 392.0,
                     "gain": -18.0,
-                    "mode": "RLC (MT)",
+                    "mode": "RLC (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x1",
@@ -111,7 +111,7 @@
                 "band0": {
                     "frequency": 932.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -120,7 +120,7 @@
                     "width": 3.0
                 }
             },
-            "mode": "SPM",
+            "mode": "IIR",
             "num-bands": 1,
             "output-gain": 0.0,
             "pitch-left": 0.0,
@@ -129,7 +129,7 @@
                 "band0": {
                     "frequency": 7458.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -148,7 +148,7 @@
                 "band0": {
                     "frequency": 554.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -159,7 +159,7 @@
                 "band1": {
                     "frequency": 4434.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -168,7 +168,7 @@
                     "width": 1.5
                 }
             },
-            "mode": "SPM",
+            "mode": "IIR",
             "num-bands": 2,
             "output-gain": 0.0,
             "pitch-left": 0.0,
@@ -177,7 +177,7 @@
                 "band0": {
                     "frequency": 1567.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -188,7 +188,7 @@
                 "band1": {
                     "frequency": 12543.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -207,7 +207,7 @@
                 "band0": {
                     "frequency": 466.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -218,7 +218,7 @@
                 "band1": {
                     "frequency": 1864.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -229,7 +229,7 @@
                 "band2": {
                     "frequency": 7458.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -238,7 +238,7 @@
                     "width": 1.0
                 }
             },
-            "mode": "SPM",
+            "mode": "IIR",
             "num-bands": 3,
             "output-gain": 0.0,
             "pitch-left": 0.0,
@@ -247,7 +247,7 @@
                 "band0": {
                     "frequency": 932.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -258,7 +258,7 @@
                 "band1": {
                     "frequency": 3729.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -269,7 +269,7 @@
                 "band2": {
                     "frequency": 14917.0,
                     "gain": 6.0,
-                    "mode": "LRX (MT)",
+                    "mode": "LRX (BT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x4",
@@ -283,11 +283,11 @@
         "filter#0": {
             "balance": 0.0,
             "bypass": true,
-            "equal-mode": "SPM",
+            "equal-mode": "IIR",
             "frequency": 329.0,
             "gain": 0.0,
             "input-gain": 0.0,
-            "mode": "LRX (MT)",
+            "mode": "LRX (BT)",
             "output-gain": 0.0,
             "quality": 0.0,
             "slope": "x4",
@@ -300,7 +300,7 @@
             "alr-knee": 12.0,
             "alr-knee-smooth": 0.0,
             "alr-release": 1000.0,
-            "attack": 20.0,
+            "attack": 5.0,
             "bypass": false,
             "dithering": "None",
             "gain-boost": true,
@@ -309,11 +309,11 @@
             "input-to-sidechain": 0.0,
             "link-to-input": 0.0,
             "link-to-sidechain": 0.0,
-            "lookahead": 20.0,
+            "lookahead": 5.0,
             "mode": "Herm Thin",
             "output-gain": 0.0,
             "oversampling": "None",
-            "release": 20.0,
+            "release": 5.0,
             "sidechain-preamp": 0.0,
             "sidechain-to-input": 0.0,
             "sidechain-to-link": 0.0,
@@ -338,7 +338,7 @@
                 "sidechain-custom-highcut-filter": false,
                 "sidechain-custom-lowcut-filter": false,
                 "sidechain-highcut-frequency": 500.0,
-                "sidechain-lookahead": 20.0,
+                "sidechain-lookahead": 0.0,
                 "sidechain-lowcut-frequency": 10.0,
                 "sidechain-mode": "RMS",
                 "sidechain-preamp": 0.0,
@@ -365,7 +365,7 @@
                 "sidechain-custom-highcut-filter": false,
                 "sidechain-custom-lowcut-filter": false,
                 "sidechain-highcut-frequency": 1000.0,
-                "sidechain-lookahead": 20.0,
+                "sidechain-lookahead": 0.0,
                 "sidechain-lowcut-frequency": 500.0,
                 "sidechain-mode": "RMS",
                 "sidechain-preamp": 0.0,
@@ -393,7 +393,7 @@
                 "sidechain-custom-highcut-filter": false,
                 "sidechain-custom-lowcut-filter": false,
                 "sidechain-highcut-frequency": 2000.0,
-                "sidechain-lookahead": 20.0,
+                "sidechain-lookahead": 0.0,
                 "sidechain-lowcut-frequency": 1000.0,
                 "sidechain-mode": "RMS",
                 "sidechain-preamp": 0.0,
@@ -545,7 +545,7 @@
                 "stereo-split-source": "Left/Right"
             },
             "bypass": true,
-            "compressor-mode": "Linear Phase",
+            "compressor-mode": "Modern",
             "dry": -80.01,
             "envelope-boost": "None",
             "input-gain": 0.0,

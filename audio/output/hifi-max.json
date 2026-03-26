@@ -72,32 +72,54 @@
             "input-gain": 0.0,
             "left": {
                 "band0": {
-                    "frequency": 392.0,
-                    "gain": -18.0,
-                    "mode": "RLC (MT)",
+                    "frequency": 138.0,
+                    "gain": 18.0,
+                    "mode": "LRX (MT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x1",
                     "solo": false,
-                    "type": "Bell",
+                    "type": "Lo-shelf",
+                    "width": 4.0
+                },
+                "band1": {
+                    "frequency": 4434.0,
+                    "gain": -18.0,
+                    "mode": "LRX (MT)",
+                    "mute": false,
+                    "q": 0.0,
+                    "slope": "x1",
+                    "solo": false,
+                    "type": "Lo-shelf",
                     "width": 4.0
                 }
             },
             "mode": "SPM",
-            "num-bands": 1,
+            "num-bands": 2,
             "output-gain": 0.0,
             "pitch-left": 0.0,
             "pitch-right": 0.0,
             "right": {
                 "band0": {
-                    "frequency": 392.0,
-                    "gain": -18.0,
-                    "mode": "RLC (MT)",
+                    "frequency": 138.0,
+                    "gain": 18.0,
+                    "mode": "LRX (MT)",
                     "mute": false,
                     "q": 0.0,
                     "slope": "x1",
                     "solo": false,
-                    "type": "Bell",
+                    "type": "Lo-shelf",
+                    "width": 4.0
+                },
+                "band1": {
+                    "frequency": 4434.0,
+                    "gain": -18.0,
+                    "mode": "LRX (MT)",
+                    "mute": false,
+                    "q": 0.0,
+                    "slope": "x1",
+                    "solo": false,
+                    "type": "Lo-shelf",
                     "width": 4.0
                 }
             },
