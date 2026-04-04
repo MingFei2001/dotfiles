@@ -1,0 +1,10 @@
+set preview true
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+# borders (optional)
+set drawbox true
+set boxchars "┌─┐│└─┘│"
+
+# hide dotfiles by default, toggle with default key `zh`
+set hidden false
