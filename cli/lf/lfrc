@@ -1,10 +1,98 @@
+# -----------------------
+# lf config (kitty)
+# -----------------------
+
+# Basics
+set hidden false         # toggle with default key: zh
 set preview true
 set previewer ~/.config/lf/previewer
 set cleaner ~/.config/lf/cleaner
 
-# borders (optional)
+# UI
 set drawbox true
 set boxchars "┌─┐│└─┘│"
+# set number true
+set ruler true
+set cursorline true
+set ratios 1:2
 
-# hide dotfiles by default, toggle with default key `zh`
-set hidden false
+# -----------------------
+# Edit vs view
+# -----------------------
+cmd edit ${{
+  ${EDITOR:-nvim} -- "$f"
+}}
+
+cmd view ${{
+  less -R -- "$f"
+}}
+
+map e edit
+map v view
+
+# -----------------------
+# Vimdiff between two files: mark then diff
+# -----------------------
+cmd diffmark ${{
+  mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/lf"
+  printf '%s\n' "$f" > "${XDG_CACHE_HOME:-$HOME/.cache}/lf/diffmark"
+  echo "Marked for diff: $f"
+}}
+
+cmd vimdiff ${{
+  mark="${XDG_CACHE_HOME:-$HOME/.cache}/lf/diffmark"
+  if [ ! -f "$mark" ]; then
+    echo "No diff mark set. Run :diffmark on the first file."
+    exit 1
+  fi
+  a="$(cat "$mark")"
+  b="$f"
+  ${EDITOR:-nvim} -d -- "$a" "$b"
+}}
+
+map m diffmark
+map d vimdiff
+
+# -----------------------
+# Clipboard helpers
+# -----------------------
+cmd copyfile ${{
+  printf '%s' "$f" | dms clipboard copy
+  echo "Copied file path"
+}}
+
+cmd copydir ${{
+  printf '%s' "$PWD" | dms clipboard copy
+  echo "Copied directory path"
+}}
+
+cmd copyname ${{
+  printf '%s' "$(basename -- "$f")" | dms clipboard copy
+  echo "Copied filename"
+}}
+
+map yf copyfile
+map yd copydir
+map yn copyname
+
+# -----------------------
+# Shell here + new kitty window
+# -----------------------
+cmd shell ${{
+  ${SHELL:-sh}
+}}
+map S shell
+
+# Requires kitty remote control enabled if you want this
+cmd kittyhere ${{
+  kitty @ launch --cwd "$PWD"
+}}
+map K kittyhere
+
+# -----------------------
+# Trash instead of delete (safe delete)
+# -----------------------
+cmd trash ${{
+  gio trash -- $fx
+}}
+map D trash
