@@ -5,8 +5,8 @@
 # Basics
 set hidden false         # toggle with default key: zh
 set preview true
-set previewer ~/.config/lf/previewer
-set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/scripts/previewer.sh
+set cleaner ~/.config/lf/scripts/cleaner.sh
 
 # UI
 set drawbox true
