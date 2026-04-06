@@ -1,6 +1,6 @@
 # Dotfiles
 > This is a collection of my config file
 
-![Current desktop](./desktop.jpg)
+![Niri Desktop](./niri-desktop.png)
 
-**My i3wm desktop**
+**Niri WM + DMS on Debian**
