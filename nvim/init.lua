@@ -110,12 +110,6 @@ do
   -- See `:help 'confirm'`
   vim.o.confirm = true
 
-  -- Netrw Config
-  vim.g.netrw_banner = 0
-  vim.g.netrw_liststyle = 3
-  vim.g.netrw_browse_split = 0
-  vim.g.netrw_winsize = 25
-
   -- [[ Basic Keymaps ]]
   --  See `:help vim.keymap.set()`
 
@@ -148,8 +142,6 @@ do
   }
 
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
-  vim.keymap.set("n", "<leader>e", "<cmd>20Lexplore<cr>", { desc = "Toggle Netrw [E]xplorer" })
 
   -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
   -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -307,6 +299,24 @@ do
       changedelete = { text = '~' }, ---@diagnostic disable-line: missing-fields
     },
   }
+
+  -- Neotree: File browser on the side
+  vim.pack.add({
+  {
+    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    version = vim.version.range('3')
+  },
+    -- dependencies
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/MunifTanjim/nui.nvim",
+    
+    -- optional, but recommended
+    "https://github.com/nvim-tree/nvim-web-devicons",
+
+    -- Keybindings to toggle neotree
+    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", {
+    desc = "Toggle [E]xplorer" })
+  })
 
   -- Useful plugin to show you pending keybinds.
   vim.pack.add { gh 'folke/which-key.nvim' }
