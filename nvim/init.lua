@@ -300,24 +300,6 @@ do
     },
   }
 
-  -- Neotree: File browser on the side
-  vim.pack.add({
-  {
-    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
-    version = vim.version.range('3')
-  },
-    -- dependencies
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/MunifTanjim/nui.nvim",
-    
-    -- optional, but recommended
-    "https://github.com/nvim-tree/nvim-web-devicons",
-
-    -- Keybindings to toggle neotree
-    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", {
-    desc = "Toggle [E]xplorer" })
-  })
-
   -- Useful plugin to show you pending keybinds.
   vim.pack.add { gh 'folke/which-key.nvim' }
   require('which-key').setup {
@@ -349,7 +331,7 @@ do
 
   -- Catppuccin colorscheme
   -- available options:  catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-  vim.pack.add { { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }
+  vim.pack.add { { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' } }
 
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
@@ -716,7 +698,7 @@ do
     -- You can add other tools here that you want Mason to install
   })
 
-  vim.keymap.set('n', '<leader>m', function() vim.cmd("Mason") end, { desc = 'Toggle [M]ason Interface' })
+  vim.keymap.set('n', '<leader>m', function() vim.cmd 'Mason' end, { desc = 'Toggle [M]ason Interface' })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -779,7 +761,6 @@ do
   -- `friendly-snippets` contains a variety of premade snippets.
   --    See the README about individual language/framework/plugin snippets:
   --    https://github.com/rafamadriz/friendly-snippets
-  --
   -- vim.pack.add { gh 'rafamadriz/friendly-snippets' }
   -- require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -823,11 +804,11 @@ do
     completion = {
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
-      documentation = { auto_show = false, auto_show_delay_ms = 500 },
+      documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 
     snippets = { preset = 'luasnip' },
@@ -921,18 +902,18 @@ do
   --
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug'
-  -- require 'kickstart.plugins.indent_line'
+
+  require 'kickstart.plugins.debug'
+  require 'kickstart.plugins.indent_line'
   -- require 'kickstart.plugins.lint'
-  -- require 'kickstart.plugins.autopairs'
-  -- require 'kickstart.plugins.neo-tree'
-  -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
+  require 'kickstart.plugins.autopairs'
+  require 'kickstart.plugins.neo-tree'
+  require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- require 'custom.plugins'
+  require 'custom.plugins'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
