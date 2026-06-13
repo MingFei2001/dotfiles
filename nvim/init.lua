@@ -628,8 +628,6 @@ do
   --  See `:help lsp-config` for information about keys and how to configure
   ---@type table<string, vim.lsp.Config>
   local servers = {
-    -- clangd = {},
-    -- gopls = {},
     -- rust_analyzer = {},
     --
     -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -638,6 +636,9 @@ do
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     -- ts_ls = {},
 
+    emmet_language_server = {},
+    clangd = {},
+    bashls = {},
     gopls = {},
     pyright = {}, -- python LSP
     stylua = {}, -- Used to format Lua code
