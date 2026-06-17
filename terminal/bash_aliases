@@ -26,7 +26,7 @@
 
 # alias for apt operations
 alias in='sudo apt install'
-alias up='sudo apt update && sudo apt upgrade -y'
+alias up='sudo apt update && sudo apt upgrade -y && flatpak update'
 alias fup='sudo apt update && sudo apt full-upgrade -y'
 alias autorm='sudo apt autoremove && sudo apt autoclean && sudo apt clean'
 alias aptrm='sudo apt remove'
@@ -81,8 +81,54 @@ alias brave-prox="brave-browser --proxy-server='socks5://localhost:1337'"
 figlet -f slant.flf Debian | lolcat && fastfetch -l none
 
 # initiate starship prompt when launching terminal
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
+#----------------------------------------------------------
 
+#----------------------------------------------------------
+## Bash Prompt Customization
+# -- Catppuccin Macchiato Color Palette --
+_user="\[\e[38;2;183;189;248m\]"   # Lavender   #B7BDF8 → user@host
+_path="\[\e[38;2;138;173;244m\]"   # Blue       #8AADF4 → current dir
+_git="\[\e[38;2;238;212;159m\]"    # Yellow     #EED49F → git branch
+_dirty="\[\e[38;2;237;135;150m\]"  # Red        #ED8796 → dirty marker *
+_ok="\[\e[38;2;166;218;149m\]"     # Green      #A6DA95 → ❯ on success
+_err="\[\e[38;2;237;135;150m\]"    # Red        #ED8796 → ❯ on error
+_muted="\[\e[38;2;110;115;141m\]"  # Overlay0   #6E738D → @ separator
+_rst="\[\e[0m\]"
+
+# -- git branch + dirty marker --
+__ps1_git() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+  if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+    echo "${branch}*"
+  else
+    echo "${branch}"
+  fi
+}
+
+# -- build prompt --
+__ps1_build() {
+  local exit=$?
+
+  local sym sep git_part branch
+  (( exit == 0 )) && sym="${_ok}❯${_rst}" || sym="${_err}❯${_rst}"
+  sep="${_muted} · ${_rst}"
+
+  branch=$(__ps1_git)
+  if [[ -n "$branch" ]]; then
+    git_part="${sep}${_git}${branch}${_rst}"
+  else
+    git_part=""
+  fi
+
+  PS1="${_user}\u${_muted}@\h${_rst}${sep}${_path}\w${_rst}${git_part}  ${sym} "
+}
+
+PROMPT_COMMAND=__ps1_build
+#----------------------------------------------------------
+
+#----------------------------------------------------------
 #set input mode to be vim modal keybinding
 set -o vi
 export EDITOR=nvim
