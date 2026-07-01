@@ -48,7 +48,7 @@ input {
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
-        disabled-on-external-mouse
+        // disabled-on-external-mouse
     }
 
     mouse {
@@ -157,25 +157,25 @@ overview {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-// This line starts waybar, a commonly used bar for Wayland compositors.
 
-// spawn ibus as daemon at the start of the session
-spawn-at-startup "ibus" "start" "--type" "wayland"
+// This line spawn ibus as daemon at the start of the session
+spawn-at-startup "fcitx5" "-d"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
   // some env var set for ibus input
-  GTK_IM_MODULE "wayland"
-  XMODIFIERS "@im=ibus"
-  QT_IM_MODULES "wayland;ibus"
-  QT_IM_MODULE " ibus"
-  QT_QPA_PLATFORM "wayland"
+  GTK_IM_MODULE "fcitx"
+  XMODIFIERS "@im=fcitx"
+  QT_IM_MODULES "wayland;"
+  QT_IM_MODULE "fcitx"
+  SDL_IM_MODULE "fcitx"
+  QT_QPA_PLATFORMTHEME "qt6ct"
 }
 hotkey-overlay {
     skip-at-startup
 }
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     workspace-switch {
         // spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
@@ -244,10 +244,11 @@ window-rule {
     open-floating false
 }
 window-rule {
+    match app-id=r#"^org\.gnome\.Calculator$"#
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
-    // match app-id=r#"^org\.gnome\.Nautilus$"#
+    match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
 }
@@ -266,22 +267,32 @@ window-rule {
 }
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
     match app-id="zoom"
     open-floating true
+    default-floating-position x=16 y=48 relative-to="bottom-left"
 }
-
-// Open flaemshot as floating by default and disable full-screen
-window-rule {
-    match app-id=r#"^flameshot$"#
-    open-fullscreen false
-    open-floating true
-}
-
 // Open dms windows as floating by default
 window-rule {
     match app-id=r#"org.quickshell$"#
+    match app-id=r#"com.danklinux.dms$"#
     open-floating true
 }
+// Prevent fcitx windows to spawn as full window
+window-rule {
+    match app-id="fcitx" title="^Fcitx5 Input Window$"
+    open-floating true
+}
+// Apply compositor level blur on kitty background
+window-rule {
+    match app-id="^kitty$"
+    background-effect {
+        blur true // Set to false to disable
+        // Optional: uncomment below for the cheaper X-ray blur
+        // xray true
+    }
+}
+
 debug {
     honor-xdg-activation-with-invalid-serial
 }
@@ -294,6 +305,11 @@ recent-windows {
         Alt+grave       { next-window filter="app-id"; }
         Alt+Shift+grave { previous-window filter="app-id"; }
     }
+}
+
+binds {
+    // only works for keyboard with display settings button
+    XF86Display { spawn  "dms" "ipc" "call" "settings" "toggleWith" "displays"; }
 }
 
 // Include dms files
